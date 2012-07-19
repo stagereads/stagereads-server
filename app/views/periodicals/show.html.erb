@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-
+<%= link_to @periodical.name, @periodical.resource_url %>
+<br/><br/>
+<p><%= @periodical.description %></p>
 <%= link_to 'Edit', edit_periodical_path(@periodical) %> |
 <%= link_to 'Back', periodicals_path %>

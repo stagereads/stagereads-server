@@ -4,7 +4,6 @@ class CreatePeriodicals < ActiveRecord::Migration
       t.string :resource
       t.string :hashed_resource
       t.string :name
-      t.string :category
       t.text :description
 
       t.timestamps

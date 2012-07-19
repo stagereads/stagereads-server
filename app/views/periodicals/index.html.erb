@@ -2,16 +2,18 @@
 
 <table>
   <tr>
-    <th></th>
-    <th></th>
+    <th>Periodical Name</th>
     <th></th>
   </tr>
 
 <% @periodicals.each do |periodical| %>
   <tr>
-    <td><%= link_to 'Show', periodical %></td>
-    <td><%= link_to 'Edit', edit_periodical_path(periodical) %></td>
-    <td><%= link_to 'Destroy', periodical, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to periodical.name, periodical.resource_url %></td>
+    <td>
+      <%= link_to 'Show', periodical %>
+      <%= link_to 'Edit', edit_periodical_path(periodical) %>
+      <%= link_to 'Destroy', periodical, confirm: 'Are you sure?', method: :delete %>
+    </td>
   </tr>
 <% end %>
 </table>
@@ -19,3 +21,5 @@
 <br />
 
 <%= link_to 'New Periodical', new_periodical_path %>
+
+<p><small><a href="http://econify.com">Ruby, Android, iOS development</a></p>

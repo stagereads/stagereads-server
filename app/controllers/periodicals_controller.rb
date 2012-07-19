@@ -13,7 +13,7 @@ class PeriodicalsController < ApplicationController
   # GET /periodicals/1
   # GET /periodicals/1.json
   def show
-    @periodical = Periodical.find(params[:id])
+    @periodical = Periodical.find_by_hashed_resource(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -34,7 +34,7 @@ class PeriodicalsController < ApplicationController
 
   # GET /periodicals/1/edit
   def edit
-    @periodical = Periodical.find(params[:id])
+    @periodical = Periodical.find_by_hashed_resource(params[:id])
   end
 
   # POST /periodicals
@@ -56,7 +56,7 @@ class PeriodicalsController < ApplicationController
   # PUT /periodicals/1
   # PUT /periodicals/1.json
   def update
-    @periodical = Periodical.find(params[:id])
+    @periodical = Periodical.find_by_hashed_resource(params[:id])
 
     respond_to do |format|
       if @periodical.update_attributes(params[:periodical])
@@ -72,7 +72,7 @@ class PeriodicalsController < ApplicationController
   # DELETE /periodicals/1
   # DELETE /periodicals/1.json
   def destroy
-    @periodical = Periodical.find(params[:id])
+    @periodical = Periodical.find_by_hashed_resource(params[:id])
     @periodical.destroy
 
     respond_to do |format|

@@ -1,4 +1,4 @@
-<%= form_for(@periodical) do |f| %>
+<%= form_for(@periodical, :html => {:multipart => true} ) do |f| %>
   <% if @periodical.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@periodical.errors.count, "error") %> prohibited this periodical from being saved:</h2>
@@ -10,6 +10,16 @@
       </ul>
     </div>
   <% end %>
+
+  <label for="name">Name</label>
+  <%= f.text_field :name %>
+  <br/><br/>
+  <label for="description">Description</label>
+  <%= f.text_area :description %>
+  <br/><br/>
+  <br/><br/>
+  <label for="resource">Upload HTML file</label>
+  <%= f.file_field :resource %>
 
   <div class="actions">
     <%= f.submit %>
