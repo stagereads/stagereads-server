@@ -2,8 +2,8 @@
 CarrierWave.configure do |config|
   config.fog_credentials = {
     :provider               => 'AWS',
-    :aws_access_key_id      => 'AKIAJF53EH3IAMMK4IOQ',
-    :aws_secret_access_key  => '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'
+    :aws_access_key_id      => 'AKIAIMI2RBXHL7R3JTJA',
+    :aws_secret_access_key  => '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'
     #:region                 => 'eu-west-1'
   }
 
@@ -11,11 +11,11 @@ CarrierWave.configure do |config|
   config.cache_dir = "#{Rails.root}/tmp/uploads"
 
   if Rails.env == "staging"
-    config.fog_directory  = 'econify-development'
+    config.fog_directory  = 'stagereads-development'
   elsif Rails.env == "production"
-    config.fog_directory  = 'econify-development'
+    config.fog_directory  = 'stagereads-production'
   else
-    config.fog_directory  = 'econify-development'
+    config.fog_directory  = 'stagereads-development'
   end
 
 end
