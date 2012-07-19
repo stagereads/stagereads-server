@@ -1,0 +1,21 @@
+<h1>Listing periodicals</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @periodicals.each do |periodical| %>
+  <tr>
+    <td><%= link_to 'Show', periodical %></td>
+    <td><%= link_to 'Edit', edit_periodical_path(periodical) %></td>
+    <td><%= link_to 'Destroy', periodical, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Periodical', new_periodical_path %>

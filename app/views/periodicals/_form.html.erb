@@ -1,0 +1,17 @@
+<%= form_for(@periodical) do |f| %>
+  <% if @periodical.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@periodical.errors.count, "error") %> prohibited this periodical from being saved:</h2>
+
+      <ul>
+      <% @periodical.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
