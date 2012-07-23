@@ -1,4 +1,7 @@
 class PeriodicalsController < ApplicationController
+
+  before_filter :authenticate, :only => [:new, :edit, :create, :update, :destroy]
+
   # GET /periodicals
   # GET /periodicals.json
   def index
@@ -80,4 +83,12 @@ class PeriodicalsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+protected
+  def authenticate
+    authenticate_or_request_with_http_basic do |username, password|
+      username == "admin" && password == "st@ge..."
+    end
+  end
+
 end
